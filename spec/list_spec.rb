@@ -1,1 +1,11 @@
-require 'spec_helper'
+require('spec_helper')
+
+describe(List) do
+  
+  it("tells which tasks are in it") do
+    list = List.create({:name => "list"})
+    task1 = Task.create({:description => "task 1", :list_id => list.id})
+    task2 = Task.create({:description => "task 2", :list_id => list.id})
+    expect(list.tasks()).to(eq([task1, task2]))
+  end
+end
