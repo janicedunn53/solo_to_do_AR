@@ -5,9 +5,3 @@ class Task < ActiveRecord::Base
     where({:done => false})
   end)
 end
-
-
-list = List.new({:name => "Epicodus stuff"})
-task = list.tasks().new({:description => "learn Active Record"})
-list.save()
-task.list()
